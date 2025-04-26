@@ -1,0 +1,11 @@
+import scapy.all as scapy
+
+
+class portCihazı:
+  def __init__(self,ip,mac):
+    self.ip=input("ip")
+    arp=Arp(pdst=self.ip)
+    self.mac=scapy.ETHER_BROADCAST(dst="mac adress")
+    packet=self.ip/self.mac
+    result= scapy.srp(packet,timeout=1)
+    print(result)
